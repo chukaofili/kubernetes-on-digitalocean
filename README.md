@@ -60,7 +60,7 @@ Create a droplet using the **current stable** version of **CoreOS**. Minimum rec
 
 > **Note:** Do not add block storage and remember the region used, you'll need it for the worker nodes later on. 
 
-###Install Kubernetes & Related Services
+### Install Kubernetes & Related Services
 
 Create and save the following script to `./install-k8s.sh`
 
