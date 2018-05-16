@@ -151,8 +151,6 @@ exit
 
 > **Note:** It might take about a minute or two to complete. Patience my friend, patience.
 
-
-
 It should output the following:
 
 ```shell
@@ -310,7 +308,7 @@ Kubenetes and related services are installed now and the workers nodes are ready
 
 
 
-###Join Cluster
+### Join Cluster
 
 Using the command that was output on **Line 65** from the `kubeadm init` command above, we'll run it on each worker node.
 
@@ -418,7 +416,7 @@ Once the load balancer has been created, we'll configure it using the tag `k8s-n
 
 
 
-###Settings: Forwarding Rules & Health Checks
+### Settings: Forwarding Rules & Health Checks
 
 To get the load balancer properly working, additional configuration is needed. 
 
