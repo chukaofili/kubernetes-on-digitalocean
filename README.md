@@ -1,4 +1,4 @@
-# Kubernetes on DigitalOcean (CoreOS) for $65
+# Kubernetes on DigitalOcean (CoreOS) for $65 - Part I
 
 ![kubernetes_degitalocean](./assets/kubernetes_digitalocean-compressor.jpg)
 
@@ -6,8 +6,23 @@ This is a multipart tutorial and walkthrough on setting up a **$65** kubernetes 
 
 There's also a video tutorial here for those who prefer to watch instead of read.
 
+[Table of Contents]
+  * [Thing's you will need.](#thing-s-you-will-need)
+  * [Kubernetes Master](#kubernetes-master)
+    + [Install Kubernetes & Related Services](#install-kubernetes---related-services)
+    + [Install Script Explained](#install-script-explained)
+    + [Initialize Master](#initialize-master)
+    + [Configure Access to Cluster](#configure-access-to-cluster)
+    + [Install Pod Network Add-on (Flannel Plugin)](#install-pod-network-add-on--flannel-plugin-)
+  * [Kubernetes Worker Nodes](#kubernetes-worker-nodes)
+    + [Install Kubernetes](#install-kubernetes)
+    + [Join Cluster](#join-cluster)
+  * [Configure Nginx Ingress](#configure-nginx-ingress)
+  * [Configure a Digital Ocean LoadBalancer](#configure-a-digital-ocean-loadbalancer)
+    + [Settings: Forwarding Rules & Health Checks](#settings--forwarding-rules---health-checks)
+  * [Simple Deployment](#simple-deployment)
+  * [Conclusion](#conclusion)
 
-[TOC]
 
 
 ## Thing's you will need.
