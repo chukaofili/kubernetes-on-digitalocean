@@ -9,7 +9,7 @@ There's also a video tutorial here for those who prefer to watch instead of read
 [Table of Contents]
   * [Thing's you will need.](#thing-s-you-will-need)
   * [Kubernetes Master](#kubernetes-master)
-    + [Install Kubernetes & Related Services](#install-kubernetes---related-services)
+    + [Install Kubernetes and Related Services](#install-kubernetes-and-related-services)
     + [Install Script Explained](#install-script-explained)
     + [Initialize Master](#initialize-master)
     + [Configure Access to Cluster](#configure-access-to-cluster)
@@ -60,7 +60,7 @@ Create a droplet using the **current stable** version of **CoreOS**. Minimum rec
 
 > **Note:** Do not add block storage and remember the region used, you'll need it for the worker nodes later on. 
 
-### Install Kubernetes & Related Services
+### Install Kubernetes and Related Services
 
 Create and save the following script to `./install-k8s.sh`
 
