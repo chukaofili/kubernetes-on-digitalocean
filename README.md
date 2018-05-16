@@ -13,7 +13,7 @@ There's also a video tutorial here for those who prefer to watch instead of read
     + [Install Script Explained](#install-script-explained)
     + [Initialize Master](#initialize-master)
     + [Configure Access to Cluster](#configure-access-to-cluster)
-    + [Install Pod Network Add-on (Flannel Plugin)](#install-pod-network-add-on--flannel-plugin-)
+    + [Install Pod Network Add-on - Flannel Plugin](#install-pod-network-add-on---flannel-plugin)
   * [Kubernetes Worker Nodes](#kubernetes-worker-nodes)
     + [Install Kubernetes](#install-kubernetes)
     + [Join Cluster](#join-cluster)
@@ -269,7 +269,7 @@ Notice the status is **NotReady**, and it won't be until we bootstrap the worker
 
 
 
-### Install Pod Network Add-on (Flannel Plugin)
+### Install Pod Network Add-on - Flannel Plugin
 
 To install the flannel network add-on plugin, run the following commands:
 
