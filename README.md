@@ -19,7 +19,7 @@ There's also a video tutorial here for those who prefer to watch instead of read
     + [Join Cluster](#join-cluster)
   * [Configure Nginx Ingress](#configure-nginx-ingress)
   * [Configure a Digital Ocean LoadBalancer](#configure-a-digital-ocean-loadbalancer)
-    + [Settings: Forwarding Rules & Health Checks](#settings--forwarding-rules---health-checks)
+    + [Settings: Forwarding Rules and Health Checks](#settings--forwarding-rules-and-health-checks)
   * [Simple Deployment](#simple-deployment)
   * [Conclusion](#conclusion)
 
@@ -416,7 +416,7 @@ Once the load balancer has been created, we'll configure it using the tag `k8s-n
 
 
 
-### Settings: Forwarding Rules & Health Checks
+### Settings: Forwarding Rules and Health Checks
 
 To get the load balancer properly working, additional configuration is needed. 
 
