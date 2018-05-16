@@ -1,4 +1,4 @@
-# Kubernetes on DigitalOcean (CoreOS) for $65 - Part I
+# $65 Kubernetes Cluster on DigitalOcean - Part I
 
 ![kubernetes_degitalocean](./assets/kubernetes_digitalocean-compressor.jpg)
 
