@@ -7,6 +7,8 @@ This is a multipart tutorial and walkthrough on setting up a **$65** kubernetes 
 There's also a video tutorial here for those who prefer to watch instead of read.
 
 
+[TOC]
+
 
 ## Thing's you will need.
 
