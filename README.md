@@ -7,7 +7,7 @@ This is a multipart tutorial and walkthrough on setting up a **$65** kubernetes 
 There's also a video tutorial here for those who prefer to watch instead of read.
 
 [Table of Contents]
-  * [Thing's you will need.](#thing-s-you-will-need)
+  * [Prerequisites](#prerequisites)
   * [Kubernetes Master](#kubernetes-master)
     + [Install Kubernetes and Related Services](#install-kubernetes-and-related-services)
     + [Install Script Explained](#install-script-explained)
@@ -25,7 +25,7 @@ There's also a video tutorial here for those who prefer to watch instead of read
 
 
 
-## Thing's you will need.
+## Prerequisites
 
 1. You'll need a Digital Ocean account, if you don't have you can get one with a free $10 credit [here](https://m.do.co/c/abb066bf4bc9).
 
