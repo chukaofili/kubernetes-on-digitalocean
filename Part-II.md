@@ -1,6 +1,6 @@
 # Add Persistent Volume Support Using DigitalOcean Block Storage - Part II
 
-This is 2nd part in the [**$65 Kubernetes Cluster on DigitalOcean** series](./README.md), you can goto [Part I](./Part-I.md) to read on how to setup your cluster if you haven't done so yet.
+This is the 2nd part in our [**$65 Kubernetes Cluster on DigitalOcean** series](./README.md), you can goto [Part I](./Part-I.md) to read on how to setup your cluster if you haven't done so yet.
 
 There's also a [video tutorial here](https://youtu.be/OrO6-4AWvD0) for those who prefer to watch instead of read.
 
@@ -8,9 +8,11 @@ There's also a [video tutorial here](https://youtu.be/OrO6-4AWvD0) for those who
 
 ## Introduction 
 
-By default, when you setup a kubernetes cluster on digitalocean manually, there isn't any persistent volume support even though digitalocean has block storage
+By default, when you setup a kubernetes cluster on digitalocean manually, there isn't any persistent volume support even though digitalocean has block storage.
 
-Our aim is to enable **persistent volume** support backed by digitaloceans block storage using a storage provisioner plugin. This tutorial assumes you have a running kubernetes cluster setup on digitalocean using CoreOS (setup might vary for other operating systems) with RBAC enabled (usually enabled by default with versions 1.9 and above).
+Our aim is to enable **persistent volume** support backed by digitalocean's block storage using a storage provisioner plugin. 
+
+This tutorial assumes you have a running kubernetes cluster setup on digitalocean using CoreOS (setup might vary for other operating systems) with RBAC enabled (usually enabled by default with versions 1.9 and above).
 
 You'll need a digitalocean access token, get one from [your account here](https://cloud.digitalocean.com/settings/api/tokens).
 
@@ -24,7 +26,7 @@ Base64 encode your digitalocean access token using the command line (macOs):
 base64 <<< [digital-ocean-token-here]
 ```
 
-It should output and encoded string, something like this:
+It should output an encoded string, something like this:
 
 ```shell
 W2RpZ2l0YWwtb2NlYW4tdG9rZW4taGVyZV0K
@@ -76,7 +78,7 @@ If everything goes well, it should exit with out any errors.
 
 ## Step 3: Update kube-controller-manager
 
-Next we'll need to update the kube-controller manager with the right path to ssl certs, as the defaults don't exist, and we'll need point it to the default volume plugin directory. Ssh into your kubernetes master with `ssh core@[kubernetes-master-ip-goes-here] ` and update the following file `/etc/kubernetes/manifests/kube-controller-manager.yaml` using the **root user**:
+Next we'll need to update the kube-controller manager with the right path to ssl certs, as the defaults don't exist, we'll need point it to the default volume plugin directory. Ssh into your kubernetes master with `ssh core@[kubernetes-master-ip-goes-here] ` and update the following file `/etc/kubernetes/manifests/kube-controller-manager.yaml` using the **root user**:
 
 Under `spec.containers.command` **add** the following:
 
@@ -191,7 +193,7 @@ subjects:
   name: digitalocean-provisioner
 ```
 
-Save the **rbac rules** as **`digitalocean-flexplugin-rbac.yml` **and create the rules using the following:
+Save the **rbac rules** as **`digitalocean-flexplugin-rbac.yml`** and create the rules using the following:
 
 ```shell
 kubectl create -f digitalocean-flexplugin-rbac.yml
@@ -372,7 +374,7 @@ kubectl create -f ditigalocean-pv-example.yml
 
 
 
-To check If your deployment succeeds, goto your digitalocean account under **Droplets > Volumes** you should see a **1Mb volume** provisioned and attached to one of your nodes. If this is the case, you have successfully added persistent volume support to your kubernetes cluster. Yay!!!
+To check If your deployment succeeds, goto your digitalocean account under **Droplets > Volumes**, you should see a **1Mb volume** provisioned and attached to one of your nodes. If this is the case, you have successfully added persistent volume support to your kubernetes cluster. Yay!!!
 
 
 
