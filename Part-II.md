@@ -20,16 +20,10 @@ You'll need a digitalocean access token, get one from [your account here](https:
 
 ## Step 1: Configure Access Token
 
-Base64 encode your digitalocean access token using the command line (macOs):
+Base64 encode your digitalocean access token, you can use [base64encode.org.](https://www.base64encode.org/) You should get an encoded string like this:
 
-```shell
-base64 <<< [digital-ocean-token-here]
-```
-
-It should output an encoded string, something like this:
-
-```shell
-W2RpZ2l0YWwtb2NlYW4tdG9rZW4taGVyZV0K
+```yams
+W2RpZ2l0YWwtb2NlYW4tdG9rZW4taGVyZV0K==
 ```
 
 Insert the encoded string into the following yaml file and save it your system as  `digitalocean-secret.yml`
@@ -54,7 +48,7 @@ kubectl create -f digitalocean-secret.yml
 
 ## Step 2: Update kubelet service with volume plugin directory
 
-We'll need to create the volume plugin directory and tell the kubelet service where the directory lives, this has to be done on the kubenetes master. Save this script as `blockstorage-pv.sh`
+We'll need to create the volume plugin directory and tell the kubelet service where the directory lives, this has to be done on the kubenetes master & all worker nodes. Save this script as `blockstorage-pv.sh`
 
 ```bash
 #!/bin/bash
@@ -70,6 +64,7 @@ And run the following command:
 
 ```shell
 ssh core@[kubernetes-master-ip-goes-here] "bash -s" < ./blockstorage-pv.sh
+ssh core@[repeat-for-each-worker-node-ip-goes-here] "bash -s" < ./blockstorage-pv.sh
 ```
 
 If everything goes well, it should exit with out any errors.
@@ -130,12 +125,6 @@ Save the file and finally restart the sublet service with `systemctl restart kub
 #### Deploy RBAC rules
 
 ```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: digitalocean-provisioner
-  namespace: kube-system
----
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -191,6 +180,12 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: digitalocean-provisioner
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: digitalocean-provisioner
+  namespace: kube-system
 ```
 
 Save the **rbac rules** as **`digitalocean-flexplugin-rbac.yml`** and create the rules using the following:
@@ -307,13 +302,13 @@ kubectl create -f digitalocean-flexplugin-deploy.yml
 
 #### Deploy the storage class
 
->  **Important!**: Change the zone on **Line 8** below to the **same region** as your cluster.
+>  **Important!**: Change the zone on **Line 8** below to the **same region** as your cluster & also the name on **Line 4**.
 
 ```yaml
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: do-lon1
+  name: [name-goes-here]
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
 parameters:
