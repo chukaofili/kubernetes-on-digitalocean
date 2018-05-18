@@ -376,4 +376,10 @@ To check If your deployment succeeds, goto your digitalocean account under **Dro
 
 
 
+## Conclusion
+
+Next in our series, we'll install and enable our **kubernetes dashboard**! But still to come, installing helm & automatic ssl certificates backed by letsencrypt. Stay tuned.
+
+
+
 I hope this helps.
