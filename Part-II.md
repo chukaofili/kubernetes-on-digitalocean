@@ -1,8 +1,12 @@
-# Add Persistent Volume Support Using DigitalOcean Block Storage - Part II
+# Add Persistent Volume Support Using DigitalOcean Block Storage - Part II!
+
+![Title Image](http://gdurl.com/O4QD)
+
+
 
 This is the 2nd part in our [**$65 Kubernetes Cluster on DigitalOcean** series](./README.md), you can goto [Part I](./Part-I.md) to read on how to setup your cluster if you haven't done so yet.
 
-There's also a [video tutorial here](https://youtu.be/OrO6-4AWvD0) for those who prefer to watch instead of read.
+There's also a [video tutorial here](https://youtu.be/2uXR3Akz3aM) for those who prefer to watch instead of read.
 
 
 
