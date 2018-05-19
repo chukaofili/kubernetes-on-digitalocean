@@ -375,7 +375,7 @@ kubectl create -f ditigalocean-pv-example.yml
 
 
 
-To check If your deployment succeeds, goto your digitalocean account under **Droplets > Volumes**, you should see a **1Mb volume** provisioned and attached to one of your nodes. If this is the case, you have successfully added persistent volume support to your kubernetes cluster. Yay!!!
+To check If your deployment succeeds, goto your digitalocean account under **Droplets > Volumes**, you should see a **1Gb volume** provisioned and attached to one of your nodes. If this is the case, you have successfully added persistent volume support to your kubernetes cluster. Yay!!!
 
 
 
