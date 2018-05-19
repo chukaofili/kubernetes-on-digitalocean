@@ -338,8 +338,8 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 1Mi
-  storageClassName: do-lon1
+      storage: 1Gi
+  storageClassName: [storageclass-name-goes-here]
 ---
 apiVersion: v1
 kind: Pod
