@@ -1,4 +1,4 @@
-# Add Persistent Volume Support Using DigitalOcean Block Storage - Part II!
+# Add Persistent Volume Support Using DigitalOcean Block Storage - Part II
 
 ![Title Image](http://gdurl.com/O4QD)
 
