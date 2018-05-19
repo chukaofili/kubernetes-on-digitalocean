@@ -306,8 +306,6 @@ kubectl create -f digitalocean-flexplugin-deploy.yml
 
 #### Deploy the storage class
 
->  **Important!**: Change the zone on **Line 8** below to the **same region** as your cluster & also the name on **Line 4**.
-
 ```yaml
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
@@ -319,6 +317,8 @@ parameters:
   zone: [region-goes-here]
 provisioner: external/digitalocean
 ```
+
+>  **Important!**: Change the zone on **Line 8** above to the **same region** as your cluster & also the **name** on **Line 4**.
 
 Save the **storage class** as **`ditigalocean-sc.yml`** and deploy using the following:
 
@@ -365,7 +365,9 @@ spec:
       claimName: pv1
 ```
 
- Save the **deployment** as **`ditigalocean-pv-example.yml`** and deploy using the following:
+> **Important!**: Change the **storageClassName** on **Line 11** above to the **same name** you gave your **storage class**.
+
+Save the **deployment** as **`ditigalocean-pv-example.yml`** and deploy using the following:
 
 ```shell
 kubectl create -f ditigalocean-pv-example.yml
