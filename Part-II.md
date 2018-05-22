@@ -4,7 +4,7 @@
 
 
 
-This is the 2nd part in our [**$65 Kubernetes Cluster on DigitalOcean** series](./README.md), you can goto [Part I](./Part-I.md) to read on how to setup your cluster if you haven't done so yet.
+This is the 2nd part in our [**$65 Kubernetes Cluster on DigitalOcean**](./README.md) series, you can goto [Part I](./Part-I.md) to read on how to setup your cluster if you haven't done so yet.
 
 There's also a [video tutorial here](https://youtu.be/2uXR3Akz3aM) for those who prefer to watch instead of read.
 
