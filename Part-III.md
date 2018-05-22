@@ -267,3 +267,13 @@ Now copy the token from the **token part** printed on-screen and paste it into 
 
 Sip some tea. We are done. :)
 
+
+
+## Conclusion
+
+Next in our series, we'll install **helm** & automatic **ssl certificates** backed by **letsencrypt**. Stay tuned.
+
+
+
+I hope this helps.
+
