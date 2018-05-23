@@ -14,7 +14,7 @@ There's also a [video tutorial here](https://youtu.be/aB0TagEzTAw) for those who
 
 The kubernetes dashboard is a graphical user interface tool that allows us to manage our cluster, monitor and troubleshoot our app deployments, as well as deploy new applications easily. It isn't installed by default if you installed your cluster manually (on managed services like [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/), it is preinstalled and configured for every new cluster).
 
-Instaling and setting it up is quite easy as per the docs [here](https://github.com/kubernetes/dashboard)
+Installing and setting it up is quite easy as per the docs [here](https://github.com/kubernetes/dashboard)
 
 TLDR.
 
@@ -263,7 +263,7 @@ Now copy the token from the **token part** printed on-screen and paste it into 
 
 
 
-## Step 5
+## Step 5 - Tea!
 
 Sip some tea. We are done. :)
 
