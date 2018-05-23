@@ -7,3 +7,5 @@ This is a multipart tutorial and walkthrough on setting up a **$65** kubernetes 
 [Table of Contents]
   * [(Part I) Install & Setup Kubernetes Cluster](./Part-I.md)
   * [(Part II) Add Persistent Storage Support](./Part-II.md)
+  * [(Part III) Install Kubernetes Dashboard](./Part-III.md)
+
