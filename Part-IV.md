@@ -79,7 +79,7 @@ To install **mongodb** and give the release a name **simpledb**, run the followi
 helm install --name simpledb stable/mongodb
 ```
 
-Once a chart is installed, a new release is created so as to enable us reuse the same chart over and over in our cluster. To get more information about our **simpledb **mongodb deployment run;
+Once a chart is installed, a new release is created so as to enable us reuse the same chart over and over in our cluster. To get more information about our **simpledb** mongodb deployment run;
 
 ```shell
 helm status simpledb
