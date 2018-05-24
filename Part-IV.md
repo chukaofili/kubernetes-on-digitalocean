@@ -4,7 +4,7 @@
 
 This is the 4th part in our [**$65 Kubernetes Cluster on DigitalOcean**](./README.md) series, you can goto [Part I](./Part-I.md) to read on how to setup your cluster if you haven't done so yet.
 
-There's also a [video tutorial here](https://youtu.be/aB0TagEzTAw) for those who prefer to watch instead of read.
+There's also a [video tutorial here](https://youtu.be/opB12VJWAMU) for those who prefer to watch instead of read.
 
 
 
@@ -73,17 +73,19 @@ helm init --service-account tiller
 
 The easiest way to install an application (also referred to as a chart), is by using the official **stable** channel.
 
-To install **mongodb** and give the release a name **simpledb**, run the following:
+To install **mongodb** for example and give the release a name **simpledb**, run the following:
 
 ```shell
 helm install --name simpledb stable/mongodb
 ```
 
-Once a chart is installed, a new release is created so as to enable us reuse the same chart over and over in our cluster. To get more information about our **simpledb** mongodb deployment run;
+Once a chart is installed, a new release is created so as to enable us reuse the same chart over and over in our cluster. To get more information about our current **simpledb** mongodb deployment run:
 
 ```shell
 helm status simpledb
 ```
+
+That will print information on how to connect to your mongodb deployment.
 
 
 
