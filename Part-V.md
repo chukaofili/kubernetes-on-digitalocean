@@ -4,7 +4,7 @@
 
 This is the 5th and final part in our [**$65 Kubernetes Cluster on DigitalOcean**](./README.md) series, you can goto [Part I](./Part-I.md) to read on how to setup your cluster if you haven't done so yet.
 
-There's also a [video tutorial here](https://youtu.be/aB0TagEzTAw) for those who prefer to watch instead of read.
+There's also a [video tutorial here](https://youtu.be/RuSz6S0WUlc) for those who prefer to watch instead of read.
 
 
 
@@ -22,7 +22,7 @@ What we will focus on today is how to automate our kubernetes cluster in issuing
 
 We'll be using helm to install **cert-manager,** if you don't have helm installed you can read up [here](./Part-IV.md) to quickly have it installed. Also the nginx-ingress should already be installed fully configured, you can read up [here](./Part-I.md#configure-nginx-ingress) to quickly install it. 
 
-The below will install cert-manager to the kube-system namespace.
+The command below will install cert-manager to the kube-system namespace.
 
 ```shell
 helm install --name cert-manager --namespace kube-system stable/cert-manager
@@ -32,7 +32,7 @@ helm install --name cert-manager --namespace kube-system stable/cert-manager
 
 ## Step 2 - Configure Certificate Issuer
 
-Before cert-manager can vend certificates, it needs a backing certifictate issuer, we be using [letsencrypt.org](https://www.letsencrypt.org)  for certificate issuance. 
+Before cert-manager can vend certificates, it needs a backing certifictate issuer, we will be using [letsencrypt.org](https://www.letsencrypt.org) for certificate issuance. 
 
 ```yaml
 
@@ -71,9 +71,9 @@ kubectl apply -f ./cert-manager-cluster-issuer.yaml
 
 
 
-## Step 3 - Example Certificate
+## Step 3 - Example TLS/SSL Deployment
 
-Now everything should be configured correctly. Let's test it out by creating a sample deployment. 
+Now everything should be configured correctly. Let's test it out by creating a sample tls/ssl deployment. 
 
 ```yaml
 apiVersion: v1
@@ -136,7 +136,7 @@ spec:
           servicePort: 80
 ```
 
-> **Note**: Replace **Lines 49 & 52** with your domain name (this domain should already point to your kubernetes cluster), this is needed to generate your key pair for issuing certificates from letsencrypt.
+> **Note**: Replace **Lines 49 & 52** with your domain name **(this domain should already point to your kubernetes cluster),** this is needed to generate your key pair for issuing certificates from letsencrypt.
 
 Save file as `echo-server-tls.yaml`
 
