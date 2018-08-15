@@ -109,7 +109,7 @@ echo "Setup Complete"
 ```
 
 ## UPDATE
-If you are using kubernetes 1.11 and above, please note that **using KUBELET_EXTRA_ARGS above** wouldn't work any more. But adding the config to `/etc/default/kubelet` should solve the networking issue if you are experiencing it.
+If you are using kubernetes 1.11 and above, please note that adding KUBELET_EXTRA_ARGS to `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf` file wouldn't work any more. But adding the config to `/etc/default/kubelet` should solve the networking issue if you are experiencing it.
 
 ```
 IFACE=eth1  # change to eth1 for DO's private network
