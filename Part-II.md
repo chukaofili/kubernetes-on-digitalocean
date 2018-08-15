@@ -64,6 +64,20 @@ systemctl daemon-reload
 systemctl restart kubelet
 ```
 
+## UPDATE
+
+If you are using kubernetes 1.11+, please note that adding KUBELET_EXTRA_ARGS to `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf` file wouldn't work any more. Instead add the config to `/etc/default/kubelet` using below script.
+
+```bash
+#!/bin/bash
+
+sudo su
+mkdir -p /etc/kubernetes/kubelet-plugins/volume
+echo "KUBELET_EXTRA_ARGS=--volume-plugin-dir=/etc/kubernetes/kubelet-plugins/volume " > /etc/default/kubelet # Use /etc/default/kubelet config file instead
+systemctl daemon-reload
+systemctl restart kubelet
+```
+
 And run the following command:
 
 ```shell
